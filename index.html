@@ -35,7 +35,7 @@
         .contest-box { background: #ffffff; color: #1a222d; padding: 8px 2px; text-align: center; border-radius: 6px; font-size: 11px; font-weight: bold; }
         .contest-box span { display: block; font-size: 14px; margin-bottom: 2px; }
 
-        /* Games Grid with Real Free Fire Images */
+        /* Games Grid */
         .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
         .game-item { background: #ff5722; border-radius: 8px; overflow: hidden; text-align: center; border: 1px solid #37474f; }
         .game-item img { width: 100%; height: 75px; object-fit: cover; display: block; }
@@ -53,4 +53,154 @@
 
         .spot-bar { background: #cfd8dc; height: 6px; border-radius: 10px; overflow: hidden; margin-bottom: 4px; }
         .spot-fill { background: #ff5722; height: 100%; width: 0%; }
-        .spot-info { display: flex; justify-
+        .spot-info { display: flex; justify-content: space-between; font-size: 10px; font-weight: bold; }
+
+        .join-btn-app { width: 100%; background: #ff5722; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 8px; cursor: pointer; font-size: 13px; }
+
+        /* Payment QR Modal Popup */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
+        .modal-content { background: #ffffff; color: #171d26; padding: 20px; border-radius: 12px; text-align: center; width: 100%; max-width: 320px; position: relative; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 22px; cursor: pointer; font-weight: bold; color: #ff5722; }
+        .qr-img { width: 220px; height: auto; border-radius: 8px; margin: 10px 0; border: 2px solid #ff5722; }
+        .upi-text { font-size: 12px; font-weight: bold; background: #eceff1; padding: 8px; border-radius: 6px; margin-bottom: 10px; word-break: break-all; }
+        .submit-btn { background: #22c55e; color: #fff; border: none; padding: 10px; width: 100%; border-radius: 6px; font-weight: bold; margin-top: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Website Name -->
+    <div class="top-header">
+        <div class="brand-block">
+            <div class="avatar-img">🔥</div>
+            <div class="brand-meta">
+                <div>Welcome to</div>
+                <div>FF TOURNAMENT ZONE</div>
+            </div>
+        </div>
+        <div class="coin-btn" onclick="openDepositModal()">
+            <div class="coin-icon">₹</div> <span id="balance">0</span>
+        </div>
+    </div>
+
+    <!-- Notice -->
+    <div class="announcement">
+        <div class="announcement-icon">📢</div>
+        <div>ID PASS NOTIFICATION SYSTEM LIVE</div>
+    </div>
+
+    <!-- Account Details -->
+    <div class="sub-title">Account Details</div>
+    <div class="quick-grid">
+        <div class="quick-item" onclick="alert('Profile Section')"><div class="quick-circle">👤</div>My Profile</div>
+        <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">👛</div>My Wallet</div>
+        <div class="quick-item" onclick="alert('Top Players List')"><div class="quick-circle">🏆</div>Top Players</div>
+        <div class="quick-item" onclick="alert('Contact Admin')"><div class="quick-circle">🎧</div>Contact Us</div>
+    </div>
+
+    <!-- My Contest -->
+    <div class="sub-title">My Contest</div>
+    <div class="contest-row">
+        <div class="contest-box"><span>🏆</span>Upcoming</div>
+        <div class="contest-box"><span>🏆</span>Ongoing</div>
+        <div class="contest-box"><span>🏆</span>Completed</div>
+    </div>
+
+    <!-- eSport Games -->
+    <div class="sub-title">eSport Games</div>
+    <div class="games-grid">
+        <div class="game-item">
+            <img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_character_alok.jpg" alt="FF MAX">
+            <div class="game-name">FF MAX I</div>
+        </div>
+        <div class="game-item">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300" alt="Lone Wolf">
+            <div class="game-name">LONE WOLF I</div>
+        </div>
+        <div class="game-item">
+            <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=300" alt="CS Match">
+            <div class="game-name">CS MATCH I</div>
+        </div>
+    </div>
+
+    <!-- Match List -->
+    <div class="sub-title">Upcoming Matches</div>
+    <div class="match-container">
+        <div class="match-header-tag">FF MAX MATCH #97921</div>
+        <div class="match-body-content">
+            <div class="match-schedule">Time: Today at 11:00 AM</div>
+            
+            <div class="stats-row">
+                <div class="stat-box"><span>PRIZE POOL</span><strong>₹700</strong></div>
+                <div class="stat-box"><span>PER KILL</span><strong>₹7</strong></div>
+                <div class="stat-box"><span>ENTRY FEE</span><strong>₹10</strong></div>
+            </div>
+
+            <div class="spot-bar"><div class="spot-fill" id="fillBar"></div></div>
+            <div class="spot-info">
+                <span style="color:#ff5722;" id="spotsLeft">48 spots left</span>
+                <span id="spotCount">0/48</span>
+            </div>
+
+            <button class="join-btn-app" onclick="joinMatch()">Join</button>
+        </div>
+    </div>
+
+    <!-- QR Payment Popup Modal -->
+    <div class="modal" id="depositModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDepositModal()">&times;</span>
+            <h3 style="margin-bottom: 5px;">Scan & Pay</h3>
+            <div class="upi-text">UPI ID: kamal.ansari01@ptyes</div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=kamal.ansari01@ptyes&pn=Kamal%20Ansari" alt="Paytm QR Code" class="qr-img">
+            <p style="font-size: 11px; color: #555;">Payment karne ke baad amount daalein:</p>
+            <input type="number" id="depositAmt" placeholder="Kitna Deposit kiya? (e.g. 50)" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
+            <button class="submit-btn" onclick="confirmDeposit()">Submit Payment</button>
+        </div>
+    </div>
+
+    <script>
+        let currentBalance = 0;
+        let joinedCount = 0;
+
+        function openDepositModal() {
+            document.getElementById("depositModal").style.display = "flex";
+        }
+
+        function closeDepositModal() {
+            document.getElementById("depositModal").style.display = "none";
+        }
+
+        function confirmDeposit() {
+            let amt = document.getElementById("depositAmt").value;
+            if(amt && !isNaN(amt) && amt > 0) {
+                currentBalance += parseInt(amt);
+                document.getElementById("balance").innerText = currentBalance;
+                alert("₹" + amt + " aapke wallet me add ho gaye hai!");
+                document.getElementById("depositAmt").value = "";
+                closeDepositModal();
+            } else {
+                alert("Kripya sahi amount daalein!");
+            }
+        }
+
+        function joinMatch() {
+            if(currentBalance < 10) {
+                alert("Wallet mein balance kam hai! Pehle Wallet par click karke Payment add karein.");
+                openDepositModal();
+                return;
+            }
+            let name = prompt("Free Fire In-Game Name daalein:");
+            let uid = prompt("Free Fire Numeric UID daalein:");
+            if(name && uid) {
+                currentBalance -= 10;
+                joinedCount += 1;
+                document.getElementById("balance").innerText = currentBalance;
+                document.getElementById("spotCount").innerText = joinedCount + "/48";
+                document.getElementById("spotsLeft").innerText = (48 - joinedCount) + " spots left";
+                document.getElementById("fillBar").style.width = (joinedCount / 48 * 100) + "%";
+                alert("Match Successfully Joined!");
+            }
+        }
+    </script>
+</body>
+</html>
