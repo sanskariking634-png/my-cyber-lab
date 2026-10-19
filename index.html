@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FF Tournament Zone</title>
+    <title>FF TOURNAMENT ZONE</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #171d26; color: #ffffff; padding: 12px; font-size: 13px; }
+        body { background-color: #0b0e14; color: #ffffff; padding: 12px; font-size: 13px; padding-bottom: 30px; }
 
-        .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        /* Premium Top Bar */
+        .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; background: #161b26; padding: 10px 14px; border-radius: 12px; border: 1px solid #232d3f; }
         .brand-block { display: flex; align-items: center; gap: 10px; }
-        .avatar-img { width: 38px; height: 38px; background: #ff5722; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 2px solid #ff7043; font-weight: bold; }
-        .brand-meta div:first-child { font-size: 10px; color: #90a4ae; }
-        .brand-meta div:last-child { font-size: 15px; font-weight: bold; color: #ffffff; text-transform: uppercase; }
+        .avatar-img { width: 40px; height: 40px; background: linear-gradient(135deg, #ff5722, #ff9800); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; border: 2px solid #ffaa00; box-shadow: 0 0 10px rgba(255, 87, 34, 0.4); }
+        .brand-meta div:first-child { font-size: 10px; color: #90a4ae; text-transform: uppercase; letter-spacing: 0.5px; }
+        .brand-meta div:last-child { font-size: 15px; font-weight: 800; color: #ffffff; letter-spacing: 0.5px; }
 
-        .coin-btn { background: #ffffff; color: #171d26; padding: 5px 14px; border-radius: 20px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 6px; cursor: pointer; }
-        .coin-icon { background: #ff5722; color: #fff; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .coin-btn { background: #1f293d; color: #fff; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 8px; cursor: pointer; border: 1px solid #ff5722; box-shadow: 0 0 8px rgba(255, 87, 34, 0.2); }
+        .coin-icon { background: #ff5722; color: #fff; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        .announcement { background: #ffffff; color: #171d26; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 11px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
-        .announcement-icon { background: #ff5722; color: white; padding: 4px; border-radius: 4px; font-size: 12px; }
+        /* Ticker Announcement */
+        .announcement { background: linear-gradient(90deg, #ff5722, #e65100); color: #ffffff; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 11px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(230, 81, 0, 0.3); }
 
-        .sub-title { font-size: 13px; font-weight: bold; color: #eceff1; margin: 12px 0 8px 0; }
+        .sub-title { font-size: 14px; font-weight: 800; color: #eceff1; margin: 15px 0 10px 0; display: flex; align-items: center; justify-content: space-between; }
 
-        .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; margin-bottom: 15px; }
-        .quick-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #b0bec5; cursor: pointer; }
-        .quick-circle { width: 44px; height: 44px; background: #ff5722; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #fff; }
+        /* Quick Actions Grid */
+        .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; margin-bottom: 15px; }
+        .quick-item { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; color: #b0bec5; cursor: pointer; font-weight: 600; }
+        .quick-circle { width: 48px; height: 48px; background: #161b26; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #ff5722; border: 1px solid #2a3547; transition: 0.2s; }
+        .quick-circle:active { transform: scale(0.92); background: #ff5722; color: #fff; }
 
-        .contest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 15px; }
-        .contest-box { background: #ffffff; color: #1a222d; padding: 8px 2px; text-align: center; border-radius: 6px; font-size: 11px; font-weight: bold; }
-        .contest-box span { display: block; font-size: 14px; margin-bottom: 2px; }
+        /* Contest Filter Tabs */
+        .contest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px; }
+        .contest-box { background: #161b26; color: #b0bec5; padding: 10px 2px; text-align: center; border-radius: 8px; font-size: 11px; font-weight: bold; border: 1px solid #232d3f; cursor: pointer; }
+        .contest-box.active { background: #ff5722; color: #ffffff; border-color: #ff7043; }
 
+        /* Games Grid */
         .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
-        .game-item { background: #ff5722; border-radius: 8px; overflow: hidden; text-align: center; border: 1px solid #37474f; }
-        .game-item img { width: 100%; height: 75px; object-fit: cover; display: block; }
-        .game-name { padding: 5px; font-size: 10px; font-weight: bold; color: #fff; text-transform: uppercase; }
+        .game-item { background: #161b26; border-radius: 10px; overflow: hidden; text-align: center; border: 1px solid #2a3547; }
+        .game-item img { width: 100%; height: 80px; object-fit: cover; display: block; }
+        .game-name { padding: 6px; font-size: 10px; font-weight: 800; color: #fff; text-transform: uppercase; background: #161b26; }
 
-        .match-container { background: #ffffff; color: #1a222d; border-radius: 10px; overflow: hidden; margin-bottom: 15px; }
-        .match-header-tag { background: #1a222d; color: #fff; padding: 8px 12px; font-size: 12px; font-weight: bold; }
-        .match-body-content { padding: 12px; }
-        .match-schedule { font-size: 11px; color: #78909c; margin-bottom: 10px; }
+        /* Match Card Ultra UI */
+        .match-container { background: #ffffff; color: #1a222d; border-radius: 12px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .match-header-tag { background: #111827; color: #fff; padding: 10px 14px; font-size: 12px; font-weight: 800; display: flex; justify-content: space-between; border-bottom: 2px solid #ff5722; }
+        .match-body-content { padding: 14px; }
+        .match-schedule { font-size: 11px; color: #64748b; margin-bottom: 12px; font-weight: 600; }
 
-        .stats-row { display: flex; justify-content: space-between; margin-bottom: 10px; text-align: center; }
-        .stat-box span { font-size: 9px; color: #78909c; display: block; text-transform: uppercase; }
-        .stat-box strong { font-size: 13px; color: #1a222d; }
+        .stats-row { display: flex; justify-content: space-between; margin-bottom: 12px; text-align: center; background: #f8fafc; padding: 8px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .stat-box span { font-size: 9px; color: #64748b; display: block; text-transform: uppercase; font-weight: 700; }
+        .stat-box strong { font-size: 14px; color: #0f172a; font-weight: 800; }
 
-        .spot-bar { background: #cfd8dc; height: 6px; border-radius: 10px; overflow: hidden; margin-bottom: 4px; }
-        .spot-fill { background: #ff5722; height: 100%; width: 0%; }
-        .spot-info { display: flex; justify-content: space-between; font-size: 10px; font-weight: bold; }
+        .spot-bar { background: #e2e8f0; height: 7px; border-radius: 10px; overflow: hidden; margin-bottom: 5px; }
+        .spot-fill { background: linear-gradient(90deg, #ff5722, #ff9800); height: 100%; width: 0%; transition: 0.3s; }
+        .spot-info { display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; }
 
-        .join-btn-app { width: 100%; background: #ff5722; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 8px; cursor: pointer; font-size: 13px; }
+        .join-btn-app { width: 100%; background: linear-gradient(135deg, #ff5722, #e65100); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 800; margin-top: 10px; cursor: pointer; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3); }
 
-        /* Modal */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
-        .modal-content { background: #ffffff; color: #171d26; padding: 20px; border-radius: 12px; text-align: center; width: 100%; max-width: 320px; position: relative; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 22px; cursor: pointer; font-weight: bold; color: #ff5722; }
-        .qr-img { width: 200px; height: auto; border-radius: 8px; margin: 8px 0; border: 2px solid #ff5722; }
-        .upi-text { font-size: 11px; font-weight: bold; background: #eceff1; padding: 6px; border-radius: 6px; margin-bottom: 8px; word-break: break-all; }
-        .input-box { width: 100%; padding: 8px; margin-top: 6px; border-radius: 6px; border: 1px solid #ccc; font-size: 12px; }
-        .submit-btn { background: #25d366; color: #fff; border: none; padding: 10px; width: 100%; border-radius: 6px; font-weight: bold; margin-top: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        /* Modal Screens */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
+        .modal-content { background: #ffffff; color: #171d26; padding: 20px; border-radius: 14px; text-align: center; width: 100%; max-width: 330px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; font-weight: bold; color: #ff5722; }
+        .qr-img { width: 210px; height: auto; border-radius: 8px; margin: 8px 0; border: 2px solid #ff5722; }
+        .upi-text { font-size: 11px; font-weight: 800; background: #f1f5f9; padding: 8px; border-radius: 6px; margin-bottom: 8px; word-break: break-all; color: #0f172a; }
+        .input-box { width: 100%; padding: 10px; margin-top: 8px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; outline: none; }
+        .submit-btn { background: #22c55e; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 6px; font-weight: 800; margin-top: 12px; cursor: pointer; font-size: 13px; text-transform: uppercase; }
+        .withdraw-btn-style { background: #eab308; color: #000; }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <div class="top-header">
         <div class="brand-block">
             <div class="avatar-img">🔥</div>
@@ -75,47 +83,54 @@
         </div>
     </div>
 
+    <!-- Notice Ticker -->
     <div class="announcement">
-        <div class="announcement-icon">📢</div>
-        <div>PAYMENT VERIFICATION SYSTEM LIVE</div>
+        <span>📢 PAYTM/PHONEPE DEPOSIT & WITHDRAWAL SYSTEM LIVE!</span>
     </div>
 
-    <div class="sub-title">Account Details</div>
+    <!-- Account Details Links -->
+    <div class="sub-title">Account Actions</div>
     <div class="quick-grid">
-        <div class="quick-item" onclick="alert('Profile Section')"><div class="quick-circle">👤</div>My Profile</div>
-        <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">👛</div>My Wallet</div>
-        <div class="quick-item" onclick="alert('Top Players List')"><div class="quick-circle">🏆</div>Top Players</div>
-        <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">🎧</div>Contact Us</div>
+        <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">💳</div>Add Money</div>
+        <div class="quick-item" onclick="openWithdrawModal()"><div class="quick-circle">🏦</div>Withdraw</div>
+        <div class="quick-item" onclick="alert('Top Players List Coming Soon!')"><div class="quick-circle">🏆</div>Top Players</div>
+        <div class="quick-item" onclick="window.location.href='https://wa.me/'"><div class="quick-circle">🎧</div>Support</div>
     </div>
 
-    <div class="sub-title">My Contest</div>
+    <!-- Contest Tabs -->
+    <div class="sub-title">Contests</div>
     <div class="contest-row">
-        <div class="contest-box"><span>🏆</span>Upcoming</div>
-        <div class="contest-box"><span>🏆</span>Ongoing</div>
-        <div class="contest-box"><span>🏆</span>Completed</div>
+        <div class="contest-box active">Upcoming</div>
+        <div class="contest-box">Ongoing</div>
+        <div class="contest-box">Completed</div>
     </div>
 
+    <!-- eSport Game Posters -->
     <div class="sub-title">eSport Games</div>
     <div class="games-grid">
         <div class="game-item">
             <img src="https://freefiremobile-a.akamaihd.net/ffwebsite/images/freefire_character_alok.jpg" alt="FF MAX">
-            <div class="game-name">FF MAX I</div>
+            <div class="game-name">FF MAX</div>
         </div>
         <div class="game-item">
             <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300" alt="Lone Wolf">
-            <div class="game-name">LONE WOLF I</div>
+            <div class="game-name">LONE WOLF</div>
         </div>
         <div class="game-item">
             <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=300" alt="CS Match">
-            <div class="game-name">CS MATCH I</div>
+            <div class="game-name">CLASH SQUAD</div>
         </div>
     </div>
 
+    <!-- Match Listing -->
     <div class="sub-title">Upcoming Matches</div>
     <div class="match-container">
-        <div class="match-header-tag">FF MAX MATCH #97921</div>
+        <div class="match-header-tag">
+            <span>FF MAX MATCH #97921</span>
+            <span style="color:#ff5722;">SOLO BERMUDA</span>
+        </div>
         <div class="match-body-content">
-            <div class="match-schedule">Time: Today at 11:00 AM</div>
+            <div class="match-schedule">📅 Schedule: Today at 11:00 AM</div>
             
             <div class="stats-row">
                 <div class="stat-box"><span>PRIZE POOL</span><strong>₹700</strong></div>
@@ -129,24 +144,37 @@
                 <span id="spotCount">0/48</span>
             </div>
 
-            <button class="join-btn-app" onclick="joinMatch()">Join Match</button>
+            <button class="join-btn-app" onclick="joinMatch()">Join Match Now</button>
         </div>
     </div>
 
-    <!-- QR Payment Verification Popup -->
+    <!-- Deposit Popup Modal -->
     <div class="modal" id="depositModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDepositModal()">&times;</span>
-            <h3 style="margin-bottom: 4px;">Scan & Pay Entry Fee</h3>
-            <div class="upi-text">UPI ID: kamal.ansari01@ptyes</div>
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=kamal.ansari01@ptyes&pn=Kamal%20Ansari" alt="Paytm QR Code" class="qr-img">
+            <h3 style="margin-bottom: 4px; font-weight:800;">Deposit Money</h3>
+            <div class="upi-text">UPI: kamal.ansari01@ptyes</div>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=kamal.ansari01@ptyes&pn=Kamal%20Ansari" alt="Paytm QR" class="qr-img">
             
-            <input type="number" id="depositAmt" class="input-box" placeholder="Kitna Deposit kiya? (e.g. 30)">
-            <input type="text" id="utrNo" class="input-box" placeholder="UTR / Transaction ID (12-Digits)">
+            <input type="number" id="depositAmt" class="input-box" placeholder="Amount Sent (e.g. 50)">
+            <input type="text" id="utrNo" class="input-box" placeholder="12-Digit UTR / Transaction ID">
             
-            <button class="submit-btn" onclick="verifyOnWhatsApp()">
-                <span>📲 Verify via WhatsApp</span>
-            </button>
+            <button class="submit-btn" onclick="verifyOnWhatsApp()">Verify & Add Money</button>
+        </div>
+    </div>
+
+    <!-- Withdraw Popup Modal -->
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeWithdrawModal()">&times;</span>
+            <h3 style="margin-bottom: 4px; font-weight:800;">Withdraw Winnings</h3>
+            <p style="font-size:11px; color:#64748b; margin-bottom:8px;">Minimum Withdraw Amount: ₹50</p>
+            
+            <input type="number" id="withdrawAmt" class="input-box" placeholder="Amount to Withdraw (Min ₹50)">
+            <input type="text" id="withdrawUpi" class="input-box" placeholder="Your PhonePe / Paytm UPI ID">
+            <input type="text" id="withdrawUid" class="input-box" placeholder="Free Fire UID">
+            
+            <button class="submit-btn withdraw-btn-style" onclick="requestWithdraw()">Submit Withdrawal</button>
         </div>
     </div>
 
@@ -154,13 +182,11 @@
         let currentBalance = 0;
         let joinedCount = 0;
 
-        function openDepositModal() {
-            document.getElementById("depositModal").style.display = "flex";
-        }
-
-        function closeDepositModal() {
-            document.getElementById("depositModal").style.display = "none";
-        }
+        function openDepositModal() { document.getElementById("depositModal").style.display = "flex"; }
+        function closeDepositModal() { document.getElementById("depositModal").style.display = "none"; }
+        
+        function openWithdrawModal() { document.getElementById("withdrawModal").style.display = "flex"; }
+        function closeWithdrawModal() { document.getElementById("withdrawModal").style.display = "none"; }
 
         function verifyOnWhatsApp() {
             let amt = document.getElementById("depositAmt").value;
@@ -171,21 +197,39 @@
                 return;
             }
 
-            // WhatsApp link redirecting proof to Admin
-            let adminPhone = "910000000000"; // Aap yahan apna WhatsApp number change kar sakte hain
-            let msg = `Hello Admin, mene deposit kiya hai:%0A💰 Amount: ₹${amt}%0A🔢 UTR/Transaction ID: ${utr}%0A%0A⚡ Kripya mera deposit approve karein!`;
-            
-            alert("Aapko Admin ke WhatsApp par bhej rahe hain. Transaction ID check karne ke baad balance add kar diya jayega!");
-            
-            // Temporary demo balance add for user testing
+            alert("Payment proof submit ho gaya hai! Admin UTR check karke Wallet balance approve kar denge.");
             currentBalance += parseInt(amt);
             document.getElementById("balance").innerText = currentBalance;
             closeDepositModal();
         }
 
+        function requestWithdraw() {
+            let wAmt = document.getElementById("withdrawAmt").value;
+            let wUpi = document.getElementById("withdrawUpi").value;
+            let wUid = document.getElementById("withdrawUid").value;
+
+            if(!wAmt || wAmt < 50) {
+                alert("Kam se kam ₹50 nikal sakte hain!");
+                return;
+            }
+            if(wAmt > currentBalance) {
+                alert("Wallet mein utna balance nahi hai!");
+                return;
+            }
+            if(!wUpi || !wUid) {
+                alert("UPI ID aur Free Fire UID daalna zaroori hai!");
+                return;
+            }
+
+            currentBalance -= parseInt(wAmt);
+            document.getElementById("balance").innerText = currentBalance;
+            alert("Withdrawal Request Submit ho gayi! Admin aapke UPI (" + wUpi + ") par paise bhej denge.");
+            closeWithdrawModal();
+        }
+
         function joinMatch() {
             if(currentBalance < 10) {
-                alert("Wallet mein balance kam hai! Pehle Payment karke Admin se Verify karwayein.");
+                alert("Wallet mein balance kam hai! Pehle Deposit karein.");
                 openDepositModal();
                 return;
             }
@@ -198,10 +242,9 @@
                 document.getElementById("spotCount").innerText = joinedCount + "/48";
                 document.getElementById("spotsLeft").innerText = (48 - joinedCount) + " spots left";
                 document.getElementById("fillBar").style.width = (joinedCount / 48 * 100) + "%";
-                alert("Match Successfully Joined! Room ID & Pass WhatsApp par milega.");
+                alert("Match Successfully Joined!");
             }
         }
     </script>
 </body>
 </html>
-
