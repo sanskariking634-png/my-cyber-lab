@@ -8,40 +8,33 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #0b0e14; color: #ffffff; padding: 12px; font-size: 13px; padding-bottom: 30px; }
 
-        /* Premium Top Bar */
         .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; background: #161b26; padding: 10px 14px; border-radius: 12px; border: 1px solid #232d3f; }
         .brand-block { display: flex; align-items: center; gap: 10px; }
         .avatar-img { width: 40px; height: 40px; background: linear-gradient(135deg, #ff5722, #ff9800); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; border: 2px solid #ffaa00; box-shadow: 0 0 10px rgba(255, 87, 34, 0.4); }
-        .brand-meta div:first-child { font-size: 10px; color: #90a4ae; text-transform: uppercase; letter-spacing: 0.5px; }
-        .brand-meta div:last-child { font-size: 15px; font-weight: 800; color: #ffffff; letter-spacing: 0.5px; }
+        .brand-meta div:first-child { font-size: 10px; color: #90a4ae; text-transform: uppercase; }
+        .brand-meta div:last-child { font-size: 15px; font-weight: 800; color: #ffffff; }
 
-        .coin-btn { background: #1f293d; color: #fff; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 8px; cursor: pointer; border: 1px solid #ff5722; box-shadow: 0 0 8px rgba(255, 87, 34, 0.2); }
+        .coin-btn { background: #1f293d; color: #fff; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 8px; cursor: pointer; border: 1px solid #ff5722; }
         .coin-icon { background: #ff5722; color: #fff; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        /* Ticker Announcement */
-        .announcement { background: linear-gradient(90deg, #ff5722, #e65100); color: #ffffff; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 11px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(230, 81, 0, 0.3); }
+        .announcement { background: linear-gradient(90deg, #ff5722, #e65100); color: #ffffff; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 11px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
 
-        .sub-title { font-size: 14px; font-weight: 800; color: #eceff1; margin: 15px 0 10px 0; display: flex; align-items: center; justify-content: space-between; }
+        .sub-title { font-size: 14px; font-weight: 800; color: #eceff1; margin: 15px 0 10px 0; }
 
-        /* Quick Actions Grid */
         .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; margin-bottom: 15px; }
         .quick-item { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; color: #b0bec5; cursor: pointer; font-weight: 600; }
-        .quick-circle { width: 48px; height: 48px; background: #161b26; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #ff5722; border: 1px solid #2a3547; transition: 0.2s; }
-        .quick-circle:active { transform: scale(0.92); background: #ff5722; color: #fff; }
+        .quick-circle { width: 48px; height: 48px; background: #161b26; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #ff5722; border: 1px solid #2a3547; }
 
-        /* Contest Filter Tabs */
         .contest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 15px; }
-        .contest-box { background: #161b26; color: #b0bec5; padding: 10px 2px; text-align: center; border-radius: 8px; font-size: 11px; font-weight: bold; border: 1px solid #232d3f; cursor: pointer; }
+        .contest-box { background: #161b26; color: #b0bec5; padding: 10px 2px; text-align: center; border-radius: 8px; font-size: 11px; font-weight: bold; border: 1px solid #232d3f; }
         .contest-box.active { background: #ff5722; color: #ffffff; border-color: #ff7043; }
 
-        /* Games Grid */
         .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
         .game-item { background: #161b26; border-radius: 10px; overflow: hidden; text-align: center; border: 1px solid #2a3547; }
         .game-item img { width: 100%; height: 80px; object-fit: cover; display: block; }
-        .game-name { padding: 6px; font-size: 10px; font-weight: 800; color: #fff; text-transform: uppercase; background: #161b26; }
+        .game-name { padding: 6px; font-size: 10px; font-weight: 800; color: #fff; text-transform: uppercase; }
 
-        /* Match Card Ultra UI */
-        .match-container { background: #ffffff; color: #1a222d; border-radius: 12px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .match-container { background: #ffffff; color: #1a222d; border-radius: 12px; overflow: hidden; margin-bottom: 15px; }
         .match-header-tag { background: #111827; color: #fff; padding: 10px 14px; font-size: 12px; font-weight: 800; display: flex; justify-content: space-between; border-bottom: 2px solid #ff5722; }
         .match-body-content { padding: 14px; }
         .match-schedule { font-size: 11px; color: #64748b; margin-bottom: 12px; font-weight: 600; }
@@ -51,25 +44,22 @@
         .stat-box strong { font-size: 14px; color: #0f172a; font-weight: 800; }
 
         .spot-bar { background: #e2e8f0; height: 7px; border-radius: 10px; overflow: hidden; margin-bottom: 5px; }
-        .spot-fill { background: linear-gradient(90deg, #ff5722, #ff9800); height: 100%; width: 0%; transition: 0.3s; }
+        .spot-fill { background: linear-gradient(90deg, #ff5722, #ff9800); height: 100%; width: 0%; }
         .spot-info { display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; }
 
-        .join-btn-app { width: 100%; background: linear-gradient(135deg, #ff5722, #e65100); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 800; margin-top: 10px; cursor: pointer; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3); }
+        .join-btn-app { width: 100%; background: linear-gradient(135deg, #ff5722, #e65100); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 800; margin-top: 10px; cursor: pointer; font-size: 14px; text-transform: uppercase; }
 
-        /* Modal Screens */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.88); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
-        .modal-content { background: #ffffff; color: #171d26; padding: 20px; border-radius: 14px; text-align: center; width: 100%; max-width: 330px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .modal-content { background: #ffffff; color: #171d26; padding: 20px; border-radius: 14px; text-align: center; width: 100%; max-width: 330px; position: relative; }
         .close-btn { position: absolute; top: 10px; right: 15px; font-size: 24px; cursor: pointer; font-weight: bold; color: #ff5722; }
         .qr-img { width: 210px; height: auto; border-radius: 8px; margin: 8px 0; border: 2px solid #ff5722; }
-        .upi-text { font-size: 11px; font-weight: 800; background: #f1f5f9; padding: 8px; border-radius: 6px; margin-bottom: 8px; word-break: break-all; color: #0f172a; }
-        .input-box { width: 100%; padding: 10px; margin-top: 8px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; outline: none; }
+        .upi-text { font-size: 11px; font-weight: 800; background: #f1f5f9; padding: 8px; border-radius: 6px; margin-bottom: 8px; color: #0f172a; word-break: break-all; }
+        .input-box { width: 100%; padding: 10px; margin-top: 8px; border-radius: 6px; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; }
         .submit-btn { background: #22c55e; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 6px; font-weight: 800; margin-top: 12px; cursor: pointer; font-size: 13px; text-transform: uppercase; }
-        .withdraw-btn-style { background: #eab308; color: #000; }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <div class="top-header">
         <div class="brand-block">
             <div class="avatar-img">🔥</div>
@@ -83,21 +73,18 @@
         </div>
     </div>
 
-    <!-- Notice Ticker -->
     <div class="announcement">
-        <span>📢 PAYTM/PHONEPE DEPOSIT & WITHDRAWAL SYSTEM LIVE!</span>
+        <span>📢 MANUAL PAYMENT VERIFICATION ACTIVE</span>
     </div>
 
-    <!-- Account Details Links -->
     <div class="sub-title">Account Actions</div>
     <div class="quick-grid">
         <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">💳</div>Add Money</div>
         <div class="quick-item" onclick="openWithdrawModal()"><div class="quick-circle">🏦</div>Withdraw</div>
-        <div class="quick-item" onclick="alert('Top Players List Coming Soon!')"><div class="quick-circle">🏆</div>Top Players</div>
-        <div class="quick-item" onclick="window.location.href='https://wa.me/'"><div class="quick-circle">🎧</div>Support</div>
+        <div class="quick-item" onclick="alert('Top Players Coming Soon!')"><div class="quick-circle">🏆</div>Top Players</div>
+        <div class="quick-item" onclick="openSupport()"><div class="quick-circle">🎧</div>Support</div>
     </div>
 
-    <!-- Contest Tabs -->
     <div class="sub-title">Contests</div>
     <div class="contest-row">
         <div class="contest-box active">Upcoming</div>
@@ -105,7 +92,6 @@
         <div class="contest-box">Completed</div>
     </div>
 
-    <!-- eSport Game Posters -->
     <div class="sub-title">eSport Games</div>
     <div class="games-grid">
         <div class="game-item">
@@ -122,7 +108,6 @@
         </div>
     </div>
 
-    <!-- Match Listing -->
     <div class="sub-title">Upcoming Matches</div>
     <div class="match-container">
         <div class="match-header-tag">
@@ -148,7 +133,7 @@
         </div>
     </div>
 
-    <!-- Deposit Popup Modal -->
+    <!-- Deposit Modal -->
     <div class="modal" id="depositModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDepositModal()">&times;</span>
@@ -159,47 +144,52 @@
             <input type="number" id="depositAmt" class="input-box" placeholder="Amount Sent (e.g. 50)">
             <input type="text" id="utrNo" class="input-box" placeholder="12-Digit UTR / Transaction ID">
             
-            <button class="submit-btn" onclick="verifyOnWhatsApp()">Verify & Add Money</button>
+            <button class="submit-btn" onclick="verifyOnWhatsApp()">Submit Proof to Admin</button>
         </div>
     </div>
 
-    <!-- Withdraw Popup Modal -->
+    <!-- Withdraw Modal -->
     <div class="modal" id="withdrawModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeWithdrawModal()">&times;</span>
             <h3 style="margin-bottom: 4px; font-weight:800;">Withdraw Winnings</h3>
-            <p style="font-size:11px; color:#64748b; margin-bottom:8px;">Minimum Withdraw Amount: ₹50</p>
+            <p style="font-size:11px; color:#64748b; margin-bottom:8px;">Min Withdraw: ₹50</p>
             
-            <input type="number" id="withdrawAmt" class="input-box" placeholder="Amount to Withdraw (Min ₹50)">
-            <input type="text" id="withdrawUpi" class="input-box" placeholder="Your PhonePe / Paytm UPI ID">
+            <input type="number" id="withdrawAmt" class="input-box" placeholder="Amount (Min ₹50)">
+            <input type="text" id="withdrawUpi" class="input-box" placeholder="Your UPI ID">
             <input type="text" id="withdrawUid" class="input-box" placeholder="Free Fire UID">
             
-            <button class="submit-btn withdraw-btn-style" onclick="requestWithdraw()">Submit Withdrawal</button>
+            <button class="submit-btn" style="background:#eab308; color:#000;" onclick="requestWithdraw()">Submit Request</button>
         </div>
     </div>
 
     <script>
         let currentBalance = 0;
         let joinedCount = 0;
+        let myWhatsAppNumber = "919000000000"; // Yahan apna WhatsApp Number likhein (country code 91 ke saath)
 
         function openDepositModal() { document.getElementById("depositModal").style.display = "flex"; }
         function closeDepositModal() { document.getElementById("depositModal").style.display = "none"; }
-        
         function openWithdrawModal() { document.getElementById("withdrawModal").style.display = "flex"; }
         function closeWithdrawModal() { document.getElementById("withdrawModal").style.display = "none"; }
+
+        function openSupport() {
+            window.location.href = `https://wa.me/${myWhatsAppNumber}?text=Hello%20Admin,%20mujhe%20help%20chahiye!`;
+        }
 
         function verifyOnWhatsApp() {
             let amt = document.getElementById("depositAmt").value;
             let utr = document.getElementById("utrNo").value;
             
-            if(!amt || !utr) {
-                alert("Kripya Amount aur UTR / Transaction ID dono daalein!");
+            if(!amt || !utr || utr.length < 6) {
+                alert("Kripya Sahi Amount aur 12-Digit UTR Number daalein!");
                 return;
             }
 
-            alert("Payment proof submit ho gaya hai! Admin UTR check karke Wallet balance approve kar denge.");
-            currentBalance += parseInt(amt);
-            document.getElementById("balance").innerText = currentBalance;
+            let textMsg = `Hello Admin, mene payment ki hai:%0A💰 Amount: ₹${amt}%0A🔢 UTR Number: ${utr}%0A%0AKripya mera deposit verify karke add karein!`;
+            
+            alert("Payment proof Admin ko bhej rahe hain! Verification ke baad Admin aapka balance add karenge.");
+            window.location.href = `https://wa.me/${myWhatsAppNumber}?text=${textMsg}`;
             closeDepositModal();
         }
 
@@ -208,33 +198,23 @@
             let wUpi = document.getElementById("withdrawUpi").value;
             let wUid = document.getElementById("withdrawUid").value;
 
-            if(!wAmt || wAmt < 50) {
-                alert("Kam se kam ₹50 nikal sakte hain!");
-                return;
-            }
-            if(wAmt > currentBalance) {
-                alert("Wallet mein utna balance nahi hai!");
-                return;
-            }
-            if(!wUpi || !wUid) {
-                alert("UPI ID aur Free Fire UID daalna zaroori hai!");
-                return;
-            }
+            if(!wAmt || wAmt < 50) { alert("Min ₹50 withdraw kar sakte hain!"); return; }
+            if(wAmt > currentBalance) { alert("Wallet mein balance nahi hai!"); return; }
+            if(!wUpi || !wUid) { alert("UPI aur Free Fire UID zaroori hai!"); return; }
 
-            currentBalance -= parseInt(wAmt);
-            document.getElementById("balance").innerText = currentBalance;
-            alert("Withdrawal Request Submit ho gayi! Admin aapke UPI (" + wUpi + ") par paise bhej denge.");
+            let textMsg = `Hello Admin, Withdraw Request:%0A💰 Amount: ₹${wAmt}%0A💳 UPI ID: ${wUpi}%0A🎮 FF UID: ${wUid}`;
+            window.location.href = `https://wa.me/${myWhatsAppNumber}?text=${textMsg}`;
             closeWithdrawModal();
         }
 
         function joinMatch() {
             if(currentBalance < 10) {
-                alert("Wallet mein balance kam hai! Pehle Deposit karein.");
+                alert("Wallet balance kam hai! Pehle Deposit karke Admin se Approve karwayein.");
                 openDepositModal();
                 return;
             }
-            let name = prompt("Free Fire In-Game Name daalein:");
-            let uid = prompt("Free Fire Numeric UID daalein:");
+            let name = prompt("Free Fire Name:");
+            let uid = prompt("Free Fire UID:");
             if(name && uid) {
                 currentBalance -= 10;
                 joinedCount += 1;
@@ -242,7 +222,7 @@
                 document.getElementById("spotCount").innerText = joinedCount + "/48";
                 document.getElementById("spotsLeft").innerText = (48 - joinedCount) + " spots left";
                 document.getElementById("fillBar").style.width = (joinedCount / 48 * 100) + "%";
-                alert("Match Successfully Joined!");
+                alert("Match Joined! Room ID & Password WhatsApp par milega.");
             }
         }
     </script>
