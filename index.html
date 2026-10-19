@@ -8,7 +8,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #171d26; color: #ffffff; padding: 12px; font-size: 13px; }
 
-        /* Header */
         .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .brand-block { display: flex; align-items: center; gap: 10px; }
         .avatar-img { width: 38px; height: 38px; background: #ff5722; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 2px solid #ff7043; font-weight: bold; }
@@ -18,30 +17,24 @@
         .coin-btn { background: #ffffff; color: #171d26; padding: 5px 14px; border-radius: 20px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 6px; cursor: pointer; }
         .coin-icon { background: #ff5722; color: #fff; width: 18px; height: 18px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        /* Notice Bar */
         .announcement { background: #ffffff; color: #171d26; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 11px; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
         .announcement-icon { background: #ff5722; color: white; padding: 4px; border-radius: 4px; font-size: 12px; }
 
-        /* Titles */
         .sub-title { font-size: 13px; font-weight: bold; color: #eceff1; margin: 12px 0 8px 0; }
 
-        /* Quick Grid */
         .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; text-align: center; margin-bottom: 15px; }
         .quick-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: #b0bec5; cursor: pointer; }
         .quick-circle { width: 44px; height: 44px; background: #ff5722; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #fff; }
 
-        /* My Contest */
         .contest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 15px; }
         .contest-box { background: #ffffff; color: #1a222d; padding: 8px 2px; text-align: center; border-radius: 6px; font-size: 11px; font-weight: bold; }
         .contest-box span { display: block; font-size: 14px; margin-bottom: 2px; }
 
-        /* Games Grid */
         .games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
         .game-item { background: #ff5722; border-radius: 8px; overflow: hidden; text-align: center; border: 1px solid #37474f; }
         .game-item img { width: 100%; height: 75px; object-fit: cover; display: block; }
         .game-name { padding: 5px; font-size: 10px; font-weight: bold; color: #fff; text-transform: uppercase; }
 
-        /* Match Card */
         .match-container { background: #ffffff; color: #1a222d; border-radius: 10px; overflow: hidden; margin-bottom: 15px; }
         .match-header-tag { background: #1a222d; color: #fff; padding: 8px 12px; font-size: 12px; font-weight: bold; }
         .match-body-content { padding: 12px; }
@@ -57,18 +50,18 @@
 
         .join-btn-app { width: 100%; background: #ff5722; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 8px; cursor: pointer; font-size: 13px; }
 
-        /* Payment QR Modal Popup */
+        /* Modal */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
         .modal-content { background: #ffffff; color: #171d26; padding: 20px; border-radius: 12px; text-align: center; width: 100%; max-width: 320px; position: relative; }
         .close-btn { position: absolute; top: 10px; right: 15px; font-size: 22px; cursor: pointer; font-weight: bold; color: #ff5722; }
-        .qr-img { width: 220px; height: auto; border-radius: 8px; margin: 10px 0; border: 2px solid #ff5722; }
-        .upi-text { font-size: 12px; font-weight: bold; background: #eceff1; padding: 8px; border-radius: 6px; margin-bottom: 10px; word-break: break-all; }
-        .submit-btn { background: #22c55e; color: #fff; border: none; padding: 10px; width: 100%; border-radius: 6px; font-weight: bold; margin-top: 8px; cursor: pointer; }
+        .qr-img { width: 200px; height: auto; border-radius: 8px; margin: 8px 0; border: 2px solid #ff5722; }
+        .upi-text { font-size: 11px; font-weight: bold; background: #eceff1; padding: 6px; border-radius: 6px; margin-bottom: 8px; word-break: break-all; }
+        .input-box { width: 100%; padding: 8px; margin-top: 6px; border-radius: 6px; border: 1px solid #ccc; font-size: 12px; }
+        .submit-btn { background: #25d366; color: #fff; border: none; padding: 10px; width: 100%; border-radius: 6px; font-weight: bold; margin-top: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
     </style>
 </head>
 <body>
 
-    <!-- Header with Website Name -->
     <div class="top-header">
         <div class="brand-block">
             <div class="avatar-img">🔥</div>
@@ -82,22 +75,19 @@
         </div>
     </div>
 
-    <!-- Notice -->
     <div class="announcement">
         <div class="announcement-icon">📢</div>
-        <div>ID PASS NOTIFICATION SYSTEM LIVE</div>
+        <div>PAYMENT VERIFICATION SYSTEM LIVE</div>
     </div>
 
-    <!-- Account Details -->
     <div class="sub-title">Account Details</div>
     <div class="quick-grid">
         <div class="quick-item" onclick="alert('Profile Section')"><div class="quick-circle">👤</div>My Profile</div>
         <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">👛</div>My Wallet</div>
         <div class="quick-item" onclick="alert('Top Players List')"><div class="quick-circle">🏆</div>Top Players</div>
-        <div class="quick-item" onclick="alert('Contact Admin')"><div class="quick-circle">🎧</div>Contact Us</div>
+        <div class="quick-item" onclick="openDepositModal()"><div class="quick-circle">🎧</div>Contact Us</div>
     </div>
 
-    <!-- My Contest -->
     <div class="sub-title">My Contest</div>
     <div class="contest-row">
         <div class="contest-box"><span>🏆</span>Upcoming</div>
@@ -105,7 +95,6 @@
         <div class="contest-box"><span>🏆</span>Completed</div>
     </div>
 
-    <!-- eSport Games -->
     <div class="sub-title">eSport Games</div>
     <div class="games-grid">
         <div class="game-item">
@@ -122,7 +111,6 @@
         </div>
     </div>
 
-    <!-- Match List -->
     <div class="sub-title">Upcoming Matches</div>
     <div class="match-container">
         <div class="match-header-tag">FF MAX MATCH #97921</div>
@@ -141,20 +129,24 @@
                 <span id="spotCount">0/48</span>
             </div>
 
-            <button class="join-btn-app" onclick="joinMatch()">Join</button>
+            <button class="join-btn-app" onclick="joinMatch()">Join Match</button>
         </div>
     </div>
 
-    <!-- QR Payment Popup Modal -->
+    <!-- QR Payment Verification Popup -->
     <div class="modal" id="depositModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDepositModal()">&times;</span>
-            <h3 style="margin-bottom: 5px;">Scan & Pay</h3>
+            <h3 style="margin-bottom: 4px;">Scan & Pay Entry Fee</h3>
             <div class="upi-text">UPI ID: kamal.ansari01@ptyes</div>
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=kamal.ansari01@ptyes&pn=Kamal%20Ansari" alt="Paytm QR Code" class="qr-img">
-            <p style="font-size: 11px; color: #555;">Payment karne ke baad amount daalein:</p>
-            <input type="number" id="depositAmt" placeholder="Kitna Deposit kiya? (e.g. 50)" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
-            <button class="submit-btn" onclick="confirmDeposit()">Submit Payment</button>
+            
+            <input type="number" id="depositAmt" class="input-box" placeholder="Kitna Deposit kiya? (e.g. 30)">
+            <input type="text" id="utrNo" class="input-box" placeholder="UTR / Transaction ID (12-Digits)">
+            
+            <button class="submit-btn" onclick="verifyOnWhatsApp()">
+                <span>📲 Verify via WhatsApp</span>
+            </button>
         </div>
     </div>
 
@@ -170,22 +162,30 @@
             document.getElementById("depositModal").style.display = "none";
         }
 
-        function confirmDeposit() {
+        function verifyOnWhatsApp() {
             let amt = document.getElementById("depositAmt").value;
-            if(amt && !isNaN(amt) && amt > 0) {
-                currentBalance += parseInt(amt);
-                document.getElementById("balance").innerText = currentBalance;
-                alert("₹" + amt + " aapke wallet me add ho gaye hai!");
-                document.getElementById("depositAmt").value = "";
-                closeDepositModal();
-            } else {
-                alert("Kripya sahi amount daalein!");
+            let utr = document.getElementById("utrNo").value;
+            
+            if(!amt || !utr) {
+                alert("Kripya Amount aur UTR / Transaction ID dono daalein!");
+                return;
             }
+
+            // WhatsApp link redirecting proof to Admin
+            let adminPhone = "910000000000"; // Aap yahan apna WhatsApp number change kar sakte hain
+            let msg = `Hello Admin, mene deposit kiya hai:%0A💰 Amount: ₹${amt}%0A🔢 UTR/Transaction ID: ${utr}%0A%0A⚡ Kripya mera deposit approve karein!`;
+            
+            alert("Aapko Admin ke WhatsApp par bhej rahe hain. Transaction ID check karne ke baad balance add kar diya jayega!");
+            
+            // Temporary demo balance add for user testing
+            currentBalance += parseInt(amt);
+            document.getElementById("balance").innerText = currentBalance;
+            closeDepositModal();
         }
 
         function joinMatch() {
             if(currentBalance < 10) {
-                alert("Wallet mein balance kam hai! Pehle Wallet par click karke Payment add karein.");
+                alert("Wallet mein balance kam hai! Pehle Payment karke Admin se Verify karwayein.");
                 openDepositModal();
                 return;
             }
@@ -198,9 +198,10 @@
                 document.getElementById("spotCount").innerText = joinedCount + "/48";
                 document.getElementById("spotsLeft").innerText = (48 - joinedCount) + " spots left";
                 document.getElementById("fillBar").style.width = (joinedCount / 48 * 100) + "%";
-                alert("Match Successfully Joined!");
+                alert("Match Successfully Joined! Room ID & Pass WhatsApp par milega.");
             }
         }
     </script>
 </body>
 </html>
+
